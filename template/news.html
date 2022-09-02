@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container py-24 mx-auto">
+
+<h2 style="text-align: center;"class="mb-4 text-4xl  font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">We invest in the world’s potential</h2>
+<p class="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">We focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
+
+</div>
+
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-2 mx-auto">
+  	
+    <div class="flex flex-wrap -mx-4 -mb-10 text-center">
+    	{% for article in articles %}
+      <div class="sm:w-1/2 mb-10 px-4">
+        <div class="rounded-lg h-64 overflow-hidden">
+          <img alt="content" class="object-cover object-center h-full w-full" src="{{article.urlToImage}}">
+        </div>
+        <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">{{article.title}}</h2>
+        <p class="leading-relaxed text-base">{{article.description}}</p>
+        <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded"><a href="{{article.url}}">Read Article</a></button>
+      </div>
+    {% endfor %} 
+    </div>
+    
+  </div>
+</section>
+
+
+
+{% endblock %}}

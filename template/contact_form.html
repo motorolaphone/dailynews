@@ -1,0 +1,29 @@
+{% extends 'bootstrap_cdn.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="jumbotron">
+<form action="" method="POST">
+  <div class="container">
+  {% csrf_token %}
+    <div class="form-group">
+        {{form.full_name|as_crispy_field}}
+    </div>
+    <div class="form-group">
+        {{form.email|as_crispy_field}}
+    </div>
+    <div class="form-group" id = "exampleFormControlTextarea1" rows = "3" class="form-control">
+      {{form.message|as_crispy_field}}
+    </div>
+      <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+        <label class="form-check-label" for="invalidCheck2">
+          Agree to terms and conditions
+        </label>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit form</button>
+  </form>
+</div>
+{% endblock %}
